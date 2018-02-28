@@ -111,7 +111,7 @@ def alignReads(SRRs,refdir,args,trimdir,logdir,aligndir):
         bamsort_cmd = ' samtools sort {} -o {}'.format(bamf,sbamf)
         bamidx_cmd = ' samtools index {}'.format(sbamf)
         
-        cmds = '\n'.join(aln_cmd, s2bam_cmd, bamsort_cmd, bamidx_cmd)
+        cmds = '\n'.join([aln_cmd, s2bam_cmd, bamsort_cmd, bamidx_cmd])
         print cmds
         subprocess.call(cmds,shell=True)
     logging.info("####Align reads complete.")
